@@ -20,14 +20,13 @@ const UserForm = ({ addUser, selectedUser, updateUser, setSelectedUser }) => {
 			setSelectedUser(defaultValues)
 		}else{
 			addUser(data)
-			console.log(data)
 			reset(defaultValues)
+			setSelectedUser(defaultValues)
 		}
 	}
 
 	const clear = (defaultValues) =>{
 		reset(defaultValues)
-		console.log(selectedUser)
 		setSelectedUser(defaultValues)
 	}
     return ( 
