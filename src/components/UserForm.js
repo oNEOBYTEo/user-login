@@ -11,21 +11,18 @@ const UserForm = ({ addUser, selectedUser, updateUser, setSelectedUser }) => {
 		if(selectedUser.id){
 			reset(selectedUser)
 		}
-	}, [selectedUser, reset,setSelectedUser])
+	}, [selectedUser, reset])
 
     const submit = (data) => {
 		if(selectedUser.first_name){
 			updateUser(selectedUser.id, data)
-			reset(defaultValues)
-			setSelectedUser(defaultValues)
 		}else{
 			addUser(data)
-			reset(defaultValues)
-			setSelectedUser(defaultValues)
 		}
+		clear(defaultValues);
 	}
 
-	const clear = (defaultValues) =>{
+	function clear (defaultValues){
 		reset(defaultValues)
 		setSelectedUser(defaultValues)
 	}
